@@ -1,0 +1,70 @@
+
+
+
+#Header
+{
+font-family: serif;
+font-style: italic;
+outline : 1px solid ;
+background-color:aqua;
+height: 80px;
+width: 100%;
+min-width: 600px;
+max-width: 1400px;
+    
+}
+
+#Menu
+{
+outline: 1px solid;
+width: 10%;
+height: 400px;
+background-color: cornsilk;
+margin-top: 10px;
+min-width: 150px;
+min-height: 400px;
+float: left;
+
+}
+
+#Content
+{
+    background-color: bisque;
+    outline: 1px solid;
+    margin-left: 160px;
+    min-width: 600px;
+    max-width: 1190px;
+    
+    
+}
+#footer
+{
+   
+    outline: 1px solid;
+    margin-top: 400px;
+    
+}
+
+.links
+{
+    margin-bottom: 20px;
+    text-decoration: none;
+    
+}
+
+.links a
+{
+   text-decoration: none;;
+    font: Arial;
+    color: black;
+}
+.registration
+{
+margin-top: 10px;
+   
+}
+.input
+{
+margin-left: 20px;    
+
+}
