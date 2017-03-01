@@ -15,3 +15,13 @@ $res = massiv ($name, $tel, $address);
 
 foreach ($res as $k => $v)
     echo "<br>$k => $v";
+
+function res ($a, $b)
+
+{
+	$c=$a*$a;
+	$d=$c%$b;
+
+	return $d;
+}
+
