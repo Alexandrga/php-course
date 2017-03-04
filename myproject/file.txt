@@ -1,0 +1,2 @@
+Firstname;Lastname;Birthday;Place of berthday;Current of location
+Alexandr;Gavrilov;08.01.1982;Novosibirsk;Novosibirsk

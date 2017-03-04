@@ -11,7 +11,8 @@ php_config_file="/etc/php5/apache2/php.ini"
 # create project folder
 #sudo mkdir "/var/www/html/${PROJECT_NAME}"
 
-echo "--- Start installation ---"
+
+"--- Start installation ---"
 
 echo "--- Update / upgrade ---"
 sudo apt-get update
