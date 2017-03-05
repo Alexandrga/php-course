@@ -23,7 +23,6 @@ while (($buffer=fgets($file, 4096)) != false) {
     <?php for ($i=0; $i<count($list); $i++):?>
     
     <tr>
-            
     
         <td> <?php echo $list[$i][0];?></td>
         <td><?php echo $list[$i][1];?></td>
