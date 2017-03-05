@@ -2,7 +2,7 @@
 
 <?php
 echo "Циклы<br>";
-/*echo "1.<br>";
+echo "1.<br>";
 
 for ($i=1; $i<=10; $i++)
     echo "Helllow";
@@ -50,7 +50,7 @@ for ($i=35; $i<=87; $i++)
        
     }
   
- }*/
+ }
  echo "<br>5.<br>";
 $sum = 0;
 set_time_limit(600);
