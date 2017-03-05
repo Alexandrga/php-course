@@ -27,7 +27,9 @@ while (($buffer=fgets($file, 4096)) != false) {
         <td><?php echo $list[0][3]?></td>
         <td><?php echo $list[0][4]?></td>
     </tr>
-    <tr><?php for ($i=1; $i<count($list); $i++):?>
+    <tr><?php for ($i=1; $i<count($list); $i++):
+            
+        // for ($k=0; $k<count($row); $k++):?>
         <td> <?php echo $list[$i][0];?></td>
         <td><?php echo $list[$i][1];?></td>
         <td><?php echo $list[$i][2];?></td>
@@ -35,7 +37,7 @@ while (($buffer=fgets($file, 4096)) != false) {
         <td><?php echo $list[$i][4];endfor;?></td>
     </tr>
 </table>
-    <
+    
 </form>
     
 
