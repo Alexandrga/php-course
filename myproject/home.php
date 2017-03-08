@@ -162,12 +162,29 @@ print_r ($massiv);
 
 echo "<br>6.<br>";
 
-$massiv = array (2,4,8,1,3);
+$massiv = array (5,2,1,3);
 
-sort($massiv);
+/*sort($massiv);
 //var_dump($massiv);
 echo "Сортировка массива по возрастанию с помощью функции:";
 foreach ($massiv as $value)
-    echo $value;
+    echo $value;*/
 
+$count = count($massiv)-1;
+
+for ($i=0; $i<count($massiv); $i++)
+    
+    for ($j=0; $j<$count; $j++)
+{
+    if ($massiv[$j]>$massiv[$j+1])
+    {
+        $value = $massiv[$j];
+        $massiv[$j] = $massiv[$j+1];
+        $massiv[$j+1] = $value;
+    }
         
+        
+        
+}
+print_r($massiv);
+   //var_dump($massiv); 
