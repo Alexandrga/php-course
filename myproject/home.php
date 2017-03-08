@@ -114,23 +114,60 @@ for ($i=0; $i<=2; $i++)
 }
     echo "Сумма без функции равна: $sum<br>";
 
-    echo "<br>3.<br>";
+echo "<br>4.<br>";
 
-    $massiv = array(5,10,3,2,1,5,6,10);
+    $massiv = array (10,3,6,4,5,10);
+    $res = array_count_values($massiv);
+        foreach ($res as $v)
+        {  
+           // var_dump($v);
+                if ($v>1)
+            
+                    {
+                        $yes = "В массиве есть повторяющиеся элементы";
+       
 
-    for ($i=0; $i<=9; $i++)
-    {
-            if ($massiv [$i] == $massiv[$i+1])
-            {
-                    ;
+                    }
+            
+        }
+if (isset($yes))
+echo $yes;
+else echo "В массиве нет повторяющихся элементов";
 
-            }
-            else
-            {
-                echo "В массиве нет повторяющихся элементов";
-            }
+echo "<br>5.<br>";
 
+$massiv = array (8,3,6,4,5,1);
 
-    }
+$max = max($massiv);
+$min = min($massiv);
+//var_dump($min);
 
+foreach ($massiv as $k => $v)
+{
+    if ($v == $max)
+        {
+            $key = $k;
+        }
+    if ($v == $min)
+        {
+            $key2 = $k;
+        }
+}
+$massiv[$key2] = $max;
+//var_dump($massiv);
+$massiv[$key] = $min;
+ 
+        
+print_r ($massiv);
 
+echo "<br>6.<br>";
+
+$massiv = array (2,4,8,1,3);
+
+sort($massiv);
+//var_dump($massiv);
+echo "Сортировка массива по возрастанию с помощью функции:";
+foreach ($massiv as $value)
+    echo $value;
+
+        
