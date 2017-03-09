@@ -134,7 +134,7 @@ if (isset($yes))
 echo $yes;
 else echo "В массиве нет повторяющихся элементов";
 
-echo "<br>5.<br>";
+echo "<br>5.<br>";  // нахождение максимального и минимального и перестановка местами
 
 $massiv = array (8,3,6,4,5,1);
 
@@ -186,5 +186,32 @@ for ($i=0; $i<count($massiv); $i++)
         
         
 }
-print_r($massiv);
+//print_r($massiv);   // вывод массива по возрастанию 
    //var_dump($massiv); 
+
+echo "<br>7.<br>";
+    
+unset($massiv[1]);
+print_r($massiv); // удаление элементам массива сохраняет порядок по возростанию.
+
+echo "<br>8.<br>"; // удаление в массиве повторов значений
+
+$massiv = array (1,2,4,4,2,5,5);
+$res = array_unique($massiv);
+print_r($res);
+
+echo "<br>9.<br>";
+
+$massiv = array (4,2,8,5,3);
+shuffle ($massiv);               // перемешивает массив случайным образом
+foreach ($massiv as $key => $value)
+    echo $key. "=>". $value."<br>";                
+
+
+
+
+
+    
+
+    
+    
