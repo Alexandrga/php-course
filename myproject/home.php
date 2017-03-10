@@ -196,22 +196,144 @@ print_r($massiv); // удаление элементам массива сохр
 
 echo "<br>8.<br>"; // удаление в массиве повторов значений
 
-$massiv = array (1,2,4,4,2,5,5);
-$res = array_unique($massiv);
-print_r($res);
+    $massiv = array (1,2,4,4,2,5,5);
+    $res = array_unique($massiv);
+    print_r($res);
 
 echo "<br>9.<br>";
 
-$massiv = array (4,2,8,5,3);
-shuffle ($massiv);               // перемешивает массив случайным образом
-foreach ($massiv as $key => $value)
-    echo $key. "=>". $value."<br>";                
+    $massiv = array (4,2,8,5,3);
+    shuffle ($massiv);               // перемешивает массив случайным образом
+        foreach ($massiv as $key => $value)
+            echo $key. "=>". $value."<br>";   
 
+echo "<br>10.<br>";  // Два упорядоченных массива
 
+    $massiv1 = array(1,2,3,4,5);
+    $massiv2 = array(5,6,8,12,15);
 
+    $massiv3 = array_merge($massiv1, $massiv2);
+    sort($massiv3);
+
+        foreach ($massiv3 as  $value)
+            echo $value."<br>";   
+
+/*echo "<br>11.<br>";  // Вставка элемента с нулевым значением
+
+    $massiv = array(-1,-2,3);
+        $count = count($massiv);
 
 
     
+    for ($j=0; $j<3; $j++)
+            
+
+                if ($massiv[$j] < 0)
+                             //  var_dump($j);
+                {
+                     $massivtemp = array_slice($massiv, $j+1);
+    
+                    for ($k=$j+1; $k<$count; $k++)
+                    {
+                        unset($massiv[$k]);
+                    }
+                     var_dump($massiv);
+                    $massiv[] = 0;
+                    $result = array_merge ($massiv, $massivtemp);
+                        
+                 //   array_splice ($massiv, ($j+1));
+                  //  array_values($massiv);
+                    
+//var_dump($result);
+                   // $array_massiv = array_merge ($massiv, $massivtemp);
+                   // $count = $count+1;
+                //  array_values ($array_massiv);
+                    
+                }
+                         
+            
+            
+       //var_dump($array_massiv);
+           //   $array_massiv = array_merge ($massiv, $massivtemp);  
+  // array_values ($array_massiv);
+ //var_dump($array_massiv);
+                   // $result = array_merge($massiv, $massivtemp);   
+
+//print_r ($result);*/
+
+echo "<br>11.<br>";  // Вывести число прописью.
+
+
+echo "<br>ФУНКЦИИ<br>";
+
+
+
+echo "<br>1.<br>";  // вычисление скорости движения
+
+?>
+
+
+<form>
+Введите пройденный путь <input type="text" name="distance"><br>
+Введите время движения<input type="text" name="time"><br>
+Пройденный путь в км<input type="checkbox" name="km" value="Yes"><br>
+Пройденный путь в м<input type="checkbox" name="m" value="Yes"><br>
+Время движения в час.<input type="checkbox" name="hour" value="Yes"><br>
+Время движения в сек.<input type="checkbox" name="sec" value="Yes"><br>
+<input type="submit" value="Рассчитать">
+</form>
+
+        
+<?php
+function Speed ($distance, $time)
+{
+    
+return $distance/$time;  
+    
+}
+
+    if (($_GET['km'] == "Yes") && ($_GET['hour'] == "Yes"))
+    {
+
+    echo "Скорость движения машины: ".Speed($_GET['distance'],$_GET['time']). "км/ч";
+    
+    }
+    if  (($_GET['m'] == "Yes") && ($_GET['sek'] == "Yes"))
+    {
+
+    echo "Скорость движения машины: ".Speed($_GET['distance'],$_GET['time'])."м/сек";
+
+    }
+
+echo "<br>2.<br>"; // вычисление факториала числа
+
+   function factorial($x) {
+if ($x === 0) return 1;
+else return $x*factorial($x-1);
+}
+echo factorial(6);
+
+echo "<br>3.<br>";  // процентная коррекция
+
+
+
+echo "<br>4.<br>"; //чтение файла
+
+$file = fopen ("filehome.txt","r");
+
+while (($buffer = fgets($file, 4096)) != false)
+{
+    $row = explode ("|",$buffer);
+    $col[] = $row;
+    
+}
+print_r ($col);
+
+
+
+?>
+
+
 
     
     
