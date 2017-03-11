@@ -19,16 +19,13 @@ while (($buffer=fgets($file, 4096)) != false) {
 <form>
 <input type="text" name="parametr" >
 <input type="submit">
-<table>
-    <?php for ($i=0; $i<count($list); $i++):?>
-    
+<table border="1">
+    <?php for ($i=0; $i<count($list); $i++)
+        for ($j=0; $j<count($row); $j++):?>
     <tr>
     
-        <td> <?php echo $list[$i][0];?></td>
-        <td><?php echo $list[$i][1];?></td>
-        <td><?php echo $list[$i][2];?></td>
-        <td><?php echo $list[$i][3];?></td>
-        <td><?php echo $list[$i][4];endfor;?></td>
+        <td> <?php echo $list[$i][$j]; endfor;?></td>
+  
     </tr>
 </table>
     
@@ -37,9 +34,3 @@ while (($buffer=fgets($file, 4096)) != false) {
 
     
 </html>
-
-    
-
-
-    
-    

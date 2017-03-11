@@ -1,0 +1,4 @@
+<td><?php echo $list[$i][1];?></td>
+        <td><?php echo $list[$i][2];?></td>
+        <td><?php echo $list[$i][3];?></td>
+        <td><?php echo $list[$i][4];

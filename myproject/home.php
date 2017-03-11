@@ -218,7 +218,7 @@ echo "<br>10.<br>";  // Два упорядоченных массива
         foreach ($massiv3 as  $value)
             echo $value."<br>";   
 
-/*echo "<br>11.<br>";  // Вставка элемента с нулевым значением
+echo "<br>11.<br>";  // Вставка элемента с нулевым значением
 
     $massiv = array(-1,-2,3);
         $count = count($massiv);
@@ -259,7 +259,7 @@ echo "<br>10.<br>";  // Два упорядоченных массива
  //var_dump($array_massiv);
                    // $result = array_merge($massiv, $massivtemp);   
 
-//print_r ($result);*/
+//print_r ($result);
 
 echo "<br>11.<br>";  // Вывести число прописью.
 
@@ -273,7 +273,7 @@ echo "<br>1.<br>";  // вычисление скорости движения
 ?>
 
 
-<form>
+<form method="get">
 Введите пройденный путь <input type="text" name="distance"><br>
 Введите время движения<input type="text" name="time"><br>
 Пройденный путь в км<input type="checkbox" name="km" value="Yes"><br>
@@ -292,16 +292,16 @@ return $distance/$time;
     
 }
 
-    if (($_GET['km'] == "Yes") && ($_GET['hour'] == "Yes"))
+    if (($_POST['km'] == "Yes") && ($_POST['hour'] == "Yes"))
     {
 
-    echo "Скорость движения машины: ".Speed($_GET['distance'],$_GET['time']). "км/ч";
+    echo "Скорость движения машины: ".Speed($_POST['distance'],$_POST['time']). "км/ч";
     
     }
-    if  (($_GET['m'] == "Yes") && ($_GET['sek'] == "Yes"))
+    if  (($_POST['m'] == "Yes") && ($_POST['sek'] == "Yes"))
     {
 
-    echo "Скорость движения машины: ".Speed($_GET['distance'],$_GET['time'])."м/сек";
+    echo "Скорость движения машины: ".Speed($_POST['distance'],$_POST['time'])."м/сек";
 
     }
 
@@ -327,7 +327,11 @@ while (($buffer = fgets($file, 4096)) != false)
     $col[] = $row;
     
 }
-print_r ($col);
+$key1 = array("title","author","print","status");
+$result = array_combine($key1,$col);
+foreach ($col as $key1 => $value)
+    foreach ($value as $key => $value1)
+    echo $key. "=>" .$value1."<br>";
 
 
 
