@@ -328,7 +328,10 @@ while (($buffer = fgets($file, 4096)) != false)
     
 }
 $key1 = array("title","author","print","status");
+
+        
 $result = array_combine($key1,$col);
+print_r($result);
 foreach ($col as $key1 => $value)
     foreach ($value as $key => $value1)
     echo $key. "=>" .$value1."<br>";
