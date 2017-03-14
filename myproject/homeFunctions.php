@@ -14,38 +14,53 @@ echo "<br>1.<br>";  // вычисление скорости движения
     Время движения в час.<input type="checkbox" name="hour" value="Yes"><br>
     Время движения в сек.<input type="checkbox" name="sec" value="Yes"><br>
     <input type="submit" name="submit" value="Рассчитать">
-    <input type="hidden" name="submit" value="yes"> 
+    <input type="hidden" name="hidden" value="yes"> 
 </form>
   
 <?php
 var_dump($_GET);
 if (isset($_GET['submit']) === true)
 {
-function speed($distance, $time)
+
+
+
+    
+    function speed($distance, $time)
     {
-        return $distance / $time;  
+        $distance = $_GET['distance'];
+        $time = $_GET['time'];
+        $km = $_GET['km'];
+        $hour = $_GET['hour'];
+        $m = $_GET['m'];
+        $sec = $_GET['sec'];
+    
+        if (isset($km) && isset($hour))
+            if (($km == "Yes") && ($hour == "Yes"))
+            {
+                $result = "км/ч";
+            }
+        if (isset($m) && isset($sec))
+        if  (($m == "Yes") && ($sec == "Yes"))
+            {
+                $result = "м/с";
+            }
+
+        echo "Скорость движения машины:". $distance / $time. "&nbsp$result";
+        
+        return;   
     }
+    echo speed($distance, $time);
 
-    if (($_GET['km'] == "Yes") && ($_GET['hour'] == "Yes"))
-        {
-            echo "Скорость движения машины: ".speed($_GET['distance'], $_GET['time']). "км/ч";
-        }
-    if  (($_GET['m'] == "Yes") && ($_GET['sec'] == "Yes"))
-        {
-
-            echo "Скорость движения машины: ".speed($_GET['distance'], $_GET['time'])."м/сек";
-        }
 }
-
 echo "<br>2.<br>"; // вычисление факториала числа
 
 function factorial($x) 
     {
-    if ($x === 0) return 1;
-    else 
-    return $x * factorial($x - 1);
+        if ($x === 0) return 1;
+        else 
+return $x * factorial($x - 1);
     }
-    echo factorial(6);
+        echo factorial(6);
     
 echo "<br>3.<br>";  // процентная коррекция
 

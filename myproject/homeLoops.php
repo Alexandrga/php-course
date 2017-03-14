@@ -37,7 +37,7 @@ for ($i = 1; $i <= 3; $i++)
         echo "$number <br>";
     }
 
-echo "<br>4.<br>";
+echo "<br>5.<br>";
 
 for ($i = 35; $i <= 87; $i++)
     {
@@ -48,7 +48,7 @@ for ($i = 35; $i <= 87; $i++)
   
     }
 
-echo "<br>5.<br>";
+echo "<br>6.<br>";
 
     $sum = 0;
     set_time_limit(600);

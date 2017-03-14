@@ -14,24 +14,25 @@ if ($isFormSubmit === true)
 			die(); // остановка выполнения сценария избегать эту функцию применять
 		}
 		$handle = fopen ($csvFile, "r+"); // + смещает указатель на начало файла
-		if ($handle !== false){
-		$rows =[]; // строки
+		if ($handle !== false)
+            {
+		      $rows =[]; // строки
 			while (($buffer = fgets($handle, 4096)) !== false){
-		$rows[]=explode(';',$buffer);	
+		      $rows[]=explode(';',$buffer);	
 	
 		//var_dump ($users);
 			}
-			fclose ($handle);
-			if (count($rows)== 0){						//		проверка пустого файла
-		echo "File $csvFile is empty";
-		die();
+			 fclose ($handle);
+			 if (count($rows)== 0){						//		проверка пустого файла
+		      echo "File $csvFile is empty";
+		      die();
 			}
-			$columns = $rows[0]; // колонки
-			$users = array_slice($rows,1); // пользователи
-			$userscount = count($users);  // количество пользователей
-			$columnscount = count($columns); // количество колонок
+            $columns = $rows[0]; // колонки
+            $users = array_slice($rows,1); // пользователи
+            $userscount = count($users);  // количество пользователей
+            $columnscount = count($columns); // количество колонок
 	}
-}
+    }
 ?>
 
 <Html>
@@ -80,7 +81,7 @@ if ($isFormSubmit === true)
 			</thead>
 
 
-		</table>
+        </table>
 	<?php endif;?>
 	</body>
 
