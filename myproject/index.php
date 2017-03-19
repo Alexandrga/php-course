@@ -82,24 +82,8 @@ if ($handle !== false)
 
 			</thead>
 
-
         </table>
 	<?php endif;?>
 	</body>
 
 </Html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

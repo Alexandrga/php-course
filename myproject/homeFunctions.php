@@ -71,7 +71,7 @@ if (isset($_GET['array']))
         else
             {    
                     $array = array (5, 6.5, 10, 3.355, 400, 9.43);
-                    $percent = $_GET['percent']/100;
+                    $percent = $_GET['percent'] / 100;
 
             function correct($array, $percent)
                 {
@@ -82,7 +82,7 @@ if (isset($_GET['array']))
                     }
                     return $array2;
                 }
-                    $result = correct($array,$percent);
+                    $result = correct($array, $percent);
             foreach ($result as $value)
                     {   
                     echo $value.",&nbsp";
@@ -98,11 +98,11 @@ if (isset($_GET['array']))
     $file = "filehome.txt";
 function readfile2($file)
 {
-    $file = fopen ($file,"r+");
-    $key1 = array ("title","author","print","status");
+    $file = fopen ($file, "r+");
+    $key1 = array ("title", "author", "print", "status");
 while (($buffer = fgets($file, 4096)) != false)
     {
-    $row[] = explode ("|",$buffer);
+    $row[] = explode ("|", $buffer);
     }
     $array = array();
 foreach ($row as $key0 => $value)
@@ -115,6 +115,9 @@ foreach ($row as $key0 => $value)
     $readfile = readfile2($file);
     print_r($readfile);
 
+function publication
+
+
     echo "<br>5.<br>"; //дата
     
     $data = "30.05.2017";  // исходная дата для вычисления
@@ -124,8 +127,8 @@ function datetime($data)
     $strdata = explode(".", $data);  
     $array = array ("1" => 'January', "2" => 'February', "3" => 'March', 4 => 'April', "5" => 'May', "6" => 'June', "7" => 'July', "8" => 'August', "9" => 'September', "10" => 'October', "11" => 'November', "12" =>'December');
     $yeararray = array ("год", "года", "лет" );
-    $montharray = array ("месяц","месяца", "месяцов");
-    $dayarray = array ("день","дня","дней");
+    $montharray = array ("месяц", "месяца", "месяцов");
+    $dayarray = array ("день", "дня", "дней");
     $wordarray = array ('остался', 'осталось');
 foreach ($array as $key => $value)
     {
@@ -139,13 +142,13 @@ foreach ($array as $key => $value)
     $data1 = $day.$month.$year;
     $str1 =strtotime($data1);
     $str2 =time();
-    $diff = $str1 -$str2;
-    $day =  floor($diff / 86400 )-4;
-    if ($day >31)
+    $diff = $str1 - $str2;
+    $day =  floor($diff / 86400 ) - 4;
+    if ($day > 31)
     {
-    $year = floor($day/360);
-    $year2 = $year *12;
-    $month = floor($day/30-$year2);
+    $year = floor($day / 360);
+    $year2 = $year * 12;
+    $month = floor($day / 30 - $year2);
     $month2 = floor($month % 12);
     $day2 = $month2;
     var_dump($day);
@@ -164,12 +167,12 @@ switch ($year)
     $word = $wordarray [0];
     break;
     }
-    if (($year >1) && ($year <5))
+    if (($year > 1) && ($year < 5))
     {
     $yearword = $yeararray[1];
     $word = $wordarray [1];       
     }
-    if ($year >4)
+    if ($year > 4)
     {
     $yearword = $yeararray[2];
     $word = $wordarray [1];
@@ -185,12 +188,12 @@ switch ($month)
    $word = $wordarray [0];
     break;
     }
-    if (($month >1) && ($month <5))
+    if (($month > 1) && ($month < 5))
     {
     $monthword = $montharray[1]; 
     $word = $wordarray [1]; 
     }
-    if ($month >4)
+    if ($month > 4)
     {
     $monthword = $montharray[2];
     $word = $wordarray [1];
@@ -206,12 +209,12 @@ switch ($day2)
     $word = $wordarray [0];
     break;
     }
-    if (($day2 >1) && ($day2 <5))
+    if (($day2 > 1) && ($day2 < 5))
     {
     $dayword  = $dayarray[1]; 
     $word = $wordarray [1]; 
     }
-    if ($day2 >4)
+    if ($day2 >4 )
     {
     $dayword = $dayarray[2];
     $word = $wordarray [1];
