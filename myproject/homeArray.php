@@ -56,7 +56,7 @@ for ($i = 0; $i <= 2; $i++)
 foreach ($element as $value)
 {  
         // var_dump($v);
-    if ($value>1)
+    if ($value > 1)
     {
         $yes = "В массиве есть повторяющиеся элементы";
     }
@@ -91,7 +91,7 @@ foreach ($array as $k => $v)
         $array[$key2] = $max;
         //var_dump($massiv);
         $array[$key] = $min;   
-        print_r ($array);
+        print_r($array);
 
         echo "<br>6.<br>"; // Сортировка массива по возрастанию.
 
@@ -108,7 +108,7 @@ foreach ($array as $value)
 for ($i = 0; $i < count($array); $i++)
     for ($j = 0; $j < $count; $j++)
     {
-        if ($array[$j]>$array[$j + 1])
+        if ($array[$j] > $array[$j + 1])
         {
             $value = $array[$j];
             $array[$j] = $array[$j + 1];
@@ -166,7 +166,7 @@ for ($j = $j; $j < $count; $j++)
            
     if ($array2[$j] < 0) 
     {
-        $temp = array_slice($array1, -($count-($j+1)), ($count-($j+1)));
+        $temp = array_slice($array1, - ($count-($j + 1)), ($count-($j + 1)));
         //var_dump($temp);
         array_splice($array1, $j);
         // var_dump($array1);
@@ -230,14 +230,14 @@ $number4 = array (1 =>"сто",
         $form2 = array (1 => 'одна', 2 => 'две');
     
         $numb = str_pad($number, 6, '0', STR_PAD_LEFT);
-        $N1 = substr($numb,0,1);
-        $N2 = substr($numb,1,1);
-        $N3 = substr($numb,2,1);
-        $N23 = substr($numb,1,2);
-        $N4 = substr($numb,3,1);
-        $N5 = substr($numb,4,1); 
-        $N6 = substr($numb,5,1); 
-        $N56 = substr($numb,4,2); 
+        $N1 = substr($numb, 0, 1);
+        $N2 = substr($numb, 1 , 1);
+        $N3 = substr($numb, 2 , 1);
+        $N23 = substr($numb, 1, 2);
+        $N4 = substr($numb, 3, 1);
+        $N5 = substr($numb, 4, 1); 
+        $N6 = substr($numb, 5, 1); 
+        $N56 = substr($numb, 4, 2); 
         //var_dump($numb);
         $str = "";
     if ($N1 > 0)    // анализируем тысячные разряды
@@ -250,11 +250,11 @@ $number4 = array (1 =>"сто",
         {
         $str = $str."&nbsp".$number3[$N2]; 
         }
-        elseif (($N3 > 0) && ($N3<3))
+        elseif (($N3 > 0) && ($N3 < 3))
         {
         $str = $str."&nbsp".$number3[$N2]."&nbsp".$form2[$N3]; 
         }
-        elseif ($N3>2)
+        elseif ($N3 > 2)
         {
         $str = $str."&nbsp".$number3[$N2]."&nbsp".$number1[$N3]; 
         }
@@ -265,9 +265,9 @@ $number4 = array (1 =>"сто",
     }
     elseif ($N2 == 0)
     {
-    if (($N3 >0) && ($N3<5))
+    if (($N3 > 0) && ($N3 < 5))
         {
-        if (($N3 >0) && ($N3<3))
+        if (($N3 > 0) && ($N3 < 3))
         {
         $str = $str."&nbsp".$form2[$N3];
         }
@@ -279,7 +279,7 @@ $number4 = array (1 =>"сто",
     }
     if  (($N3 == 0) || ($N2 == 1) || ($N3 > 4)) // склоняем тысячи
     
-        if (($N1 == 0) && ($N2 ==0) && ($N3 == 0))
+        if (($N1 == 0) && ($N2 == 0) && ($N3 == 0))
         {
         $str = $str;
         }
@@ -324,7 +324,7 @@ $number4 = array (1 =>"сто",
         {
         $str2 = $str2."&nbsp".$number1[$N6];
         }
-        if (($N6 >1) && ($N6<5))
+        if (($N6 > 1) && ($N6 < 5))
         {
         $str2 = $str2."&nbsp".$number1[$N6];
         }

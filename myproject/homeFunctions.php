@@ -113,14 +113,31 @@ foreach ($row as $key0 => $value)
     return $array;
 }
     $readfile = readfile2($file);
-    print_r($readfile);
+   // print_r($readfile);   // вывод массива книг
+$status = 1;    // статус книг
+function publication($status, $readfile)
+{
+    foreach ($readfile as $k => $v)
+        foreach ($v as $key => $value)
+        {
+        $list[$key] = $value;
+        if ($value == $status)
+            {
+            $listbook = $list;
+            $array[] = $listbook;
+            }
+        }
+return $array;    
+}
 
-function publication
+    $result = publication($status, $readfile);
+    print_r ($result);  // вывод массива книг в соответствии с статусом
 
 
-    echo "<br>5.<br>"; //дата
+
+ /*   echo "<br>5.<br>"; //дата
     
-    $data = "30.05.2017";  // исходная дата для вычисления
+    $data = "5.04.2018";  // исходная дата для вычисления
 
 function datetime($data)
 {
@@ -130,6 +147,7 @@ function datetime($data)
     $montharray = array ("месяц", "месяца", "месяцов");
     $dayarray = array ("день", "дня", "дней");
     $wordarray = array ('остался', 'осталось');
+    $arraymonth = array ('January' => '31', 'February' => '28', 'March' => '31', 'April' => '30', 'May' => '31', 'June' => '30', 'July' => '31', 'August' => '31', 'September' => '30', 'October' => '31', 'November' => '30', 'December' => '31',);
 foreach ($array as $key => $value)
     {
     if ($key == $strdata[1])  
@@ -143,18 +161,44 @@ foreach ($array as $key => $value)
     $str1 =strtotime($data1);
     $str2 =time();
     $diff = $str1 - $str2;
-    $day =  floor($diff / 86400 ) - 4;
-    if ($day > 31)
+    $day =  floor($diff / 86400 + 1);
+   // var_dump ($month);
+    
+    if ($day > 365)
     {
-    $year = floor($day / 360);
-    $year2 = $year * 12;
+        
+    $year = floor($day / 365);
+    $day2 = $day % 365;
+   /* foreach ($arraymonth as $key => $value)
+    {
+        if ($key == $month)
+        {
+            $month2 = $value;
+            $datatmp = getdate();
+            $datatmp2 = getdate($str1);
+            $mdayfirst = $datatmp['mday'];
+            $mdaylast = $datatmp2['mday'];
+        foreach ($arraymonth as $k => $v)
+            {
+            while ($v !== $month2)
+                {
+                
+                }
+            }
+            
+        }
+            
+    }
+    
+    var_dump($mdaylast);
+        
     $month = floor($day / 30 - $year2);
     $month2 = floor($month % 12);
     $day2 = $month2;
-    var_dump($day);
-    var_dump($month);
-    var_dump($year);
-    var_dump($day2);
+//var_dump($day);
+    //var_dump($month);
+   // var_dump($day2);
+   // var_dump($day2);
     }
 switch ($year) 
     {
@@ -223,5 +267,5 @@ switch ($day2)
 return $result;
 }
     $datatime = datetime($data);
-    echo $datatime;
+    echo $datatime;*/
 ?>
