@@ -12,11 +12,10 @@ Class MyClass
     {
     	if ($this->number === 0) return 1;
     	else 
-       	return $this->number * (factorial($this->number)-1);
+       	return $this->number * factorial($this->number-1);
     }
 }
 $text = new MyClass ('6');
-//$text->number = 6;
 var_dump($text);
-var_dump($text->factorial('5'));
+echo $text->factorial('6');
 ?>
