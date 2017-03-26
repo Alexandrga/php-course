@@ -13,7 +13,8 @@ class ToyotaAuto extends Auto {
     
     public function __construct ($make, $model, $color ='white')
     {
-        
+    parent::__construct($make, $model);
+    $this->color = $color;  
     }
 }
 
@@ -33,8 +34,9 @@ class Auto {
 }
 $obj1 = new Auto('Toyota', 'Ist');
 $obj1 = new Auto('Nissan', 'Honda');
-
+echo $obj3->getMakeAndModel();
 $obj4 = AutoFactory::create('Toyota','Lexus', 'black');
 $obj5 = AutoFactory::create('Nissan','Sunny', 'pink');
 
+echo $obj5->getMakeAndModel();
 var_dump ($obj1);
