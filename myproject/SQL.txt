@@ -1,0 +1,26 @@
+create database Namebasa; -  создание базы данных
+
+mysql -u root -p - зайти в mysql
+
+grant all on publication.* TO 'manager'@'localhost' identified by 'пароль' - создание пользователя
+
+create table - создание таблицы
+
+перед создание таблицы надо выбрать базу данных - use название базы данных;
+
+describe название таблицы - отображение таблицыение 
+
+CREATE TABLE название (назв. поля тип данных, .....  ) ENGINE InnoDB;
+
+ALTER TABLE classics ADD id INT UNSIGNED NOT NULL AUTO_INCREMENT KEY;- изменение таблицы
+
+DROP Id - удалить поле
+
+ INSERT INTO classics (author, title,type,year)
+    -> VALUES ('Mark Twen','The Adventures jn Tom Soyer','Fiction','1876');
+
+
+SELECT * FROM classics
+
+
+select author FROM classics;
